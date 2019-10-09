@@ -48,10 +48,6 @@ User.prototype.validPassword = function(password) {
 };
 
 
-User.prototype.validPassword = function(password) {
-  return bcrypt.compareSync(password, this.password);
-};
-
 mysqlConnection.sync()
   .then(() => console.log('La tabla users se ha creado correctamente si no existe'))
   .catch(error => console.log('Ha ocurrido un error', error));
